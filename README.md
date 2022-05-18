@@ -31,8 +31,8 @@ By default, `ReshapeHelper::schema_query` will look for migrations files in `mig
 require "reshape_helper"
 
 schema_query = ReshapeHelper::schema_query(
-		"src/users/migrations",
-		"src/todos/migrations",
+	"src/users/migrations",
+	"src/todos/migrations",
 )
 ```
 

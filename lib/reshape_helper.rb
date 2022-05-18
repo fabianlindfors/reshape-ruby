@@ -5,6 +5,11 @@ DEFAULT_SEARCH_PATH = '"$user", public'
 
 class ReshapeHelper
 	def self.schema_query(*dirs)
+		search_path = self.search_path(*dirs) || DEFAULT_SEARCH_PATH
+		"SET search_path TO #{search_path}"
+	end
+
+	def self.search_path(*dirs)
 		# Default to searching the migrations folder
 		if dirs.empty?
 			dirs = ["migrations"]
@@ -13,12 +18,12 @@ class ReshapeHelper
 		migrations = self.find_migrations(dirs)
 
 		search_path = if migrations.empty?
-			DEFAULT_SEARCH_PATH
+			nil
 		else
 			"migration_#{migrations.last()}"
 		end
 
-		"SET search_path TO #{search_path}"
+		search_path
 	end
 
 	private
