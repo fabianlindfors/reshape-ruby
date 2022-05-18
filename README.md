@@ -14,7 +14,7 @@ gem "reshape_helper", "~> 0.1.1"
 
 ## Usage
 
-The library exposes a single function, `ReshapeHelper::schema_query`, which will find all your Reshape migration files and determine the right schema query to run. Here's an example of how to use it:
+The library includes a `ReshapeHelper::schema_query` method which will find all your Reshape migration files and determine the right schema query to run. Here's an example of how to use it:
 
 ```ruby
 require "reshape_helper"
