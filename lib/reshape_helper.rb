@@ -3,7 +3,7 @@ require "json"
 
 DEFAULT_SEARCH_PATH = '"$user", public'
 
-class Reshape
+class ReshapeHelper
 	def self.schema_query(*dirs)
 		# Default to searching the migrations folder
 		if dirs.empty?
