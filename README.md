@@ -36,6 +36,24 @@ schema_query = ReshapeHelper::schema_query(
 )
 ```
 
+## Usage with Rails
+
+Using Reshape for zero-downtime migrations with Ruby on Rails is dead simple. After adding `reshape_helper` to your `Gemfile`, update `config/database.yml` and add a `schema_search_path` setting like this:
+
+```yaml
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  schema_search_path: <%= ReshapeHelper::search_path %>
+```
+
+Now your Rails app is ready for use with Reshape. Rather than creating standard Active Record migrations using `bin/rails generate migration ...`, you should create [Reshape migration files](https://github.com/fabianlindfors/reshape) in `migrations/`. If you'd prefer to use other folders for your migrations, you can pass them along as arguments:
+
+```yaml
+schema_search_path: <%= ReshapeHelper.search_path("src/users/migrations", "src/todos/migrations") %>
+```
+
 ## License
 
 Released under the [MIT license](https://choosealicense.com/licenses/mit/).
