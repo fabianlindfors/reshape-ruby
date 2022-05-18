@@ -7,4 +7,7 @@ Gem::Specification.new do |s|
 	s.files       = ["lib/reshape_helper.rb"]
 	s.homepage    = "https://github.com/fabianlindfors/reshape-ruby"
 	s.license     = 'MIT'
+
+	s.add_runtime_dependency "toml", "~> 0.3.0"
+	s.add_development_dependency "test-unit", "~> 3.5.3"
 end
