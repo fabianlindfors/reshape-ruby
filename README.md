@@ -9,7 +9,7 @@ This is a Ruby helper library for the automated, zero-downtime schema migration 
 Add `reshape_helper` as a dependency to your `Gemfile`:
 
 ```ruby
-gem "reshape_helper", "~> 0.1.1"
+gem "reshape_helper", "~> 0.2.0"
 ```
 
 ## Usage
