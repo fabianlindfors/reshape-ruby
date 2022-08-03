@@ -7,11 +7,11 @@ class ReshapeTest < Test::Unit::TestCase
 	end
 
 	def test_custom_directory
-		assert_schema_path("migration_3_test_migration", "tests/fixtures/migrations-1")
+		assert_schema_path("migration_10_test_migration", "tests/fixtures/migrations-1")
 	end
 
 	def test_multiple_directories
-		assert_schema_path("migration_3_test_migration", "tests/fixtures/migrations-1", "tests/fixtures/migrations-2")
+		assert_schema_path("migration_10_test_migration", "tests/fixtures/migrations-1", "tests/fixtures/migrations-2")
 	end
 
 	def test_custom_migration_name

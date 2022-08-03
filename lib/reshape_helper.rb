@@ -1,5 +1,6 @@
 require "toml"
 require "json"
+require "natural_sort"
 
 DEFAULT_SEARCH_PATH = '"$user", public'
 
@@ -35,7 +36,7 @@ class ReshapeHelper
 		end
 
 		# Sort files by their names
-		files = files.sort_by { |file| File.basename(file, ".*") }
+		files = files.sort_by { |file| NaturalSort(File.basename(file, ".*")) }
 
 		migrations = files.map do |file_path|
 			contents = File.read(file_path)

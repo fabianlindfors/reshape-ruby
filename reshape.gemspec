@@ -9,5 +9,6 @@ Gem::Specification.new do |s|
 	s.license     = 'MIT'
 
 	s.add_runtime_dependency "toml", "~> 0.3.0"
+	s.add_runtime_dependency "natural_sort", "~> 0.3.0"
 	s.add_development_dependency "test-unit", "~> 3.5.3"
 end
